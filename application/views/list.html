@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Title</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>编号</td>
+            <td>标题</td>
+            <td>作者</td>
+            <td>添加时间</td>
+            <td>操作</td>
+        </tr>
+        <?php foreach($news as $row):?>
+        <tr>
+            <td><?=$row['id'];?></td>
+            <td><?=$row['title'];?></td>
+            <td><?=$row['author'];?></td>
+            <td><?=date('Y-m-d H:i:s',$row['add_time']);?></td>
+            <td><a href="<?php echo site_url('news/edit?id='.$row['id']);?>">编辑</a>
+                <a href="<?php echo site_url('news/delete?id='.$row['id']);?>">删除</a>
+            </td>
+        </tr>
+        <?php endforeach;?>
+    </table>
+</body>
+</html>
