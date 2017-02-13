@@ -18,4 +18,3 @@ class Admin_Controller extends CI_Controller {
         $this->load->switch_themes_off();
     }
 }
-//定义后台总控制器
